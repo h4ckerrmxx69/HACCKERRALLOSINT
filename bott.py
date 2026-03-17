@@ -6,7 +6,7 @@ from telebot import types
 
 # --- CONFIGURATION ---
 # @BotFather se mila hua token yahan daalein
-API_TOKEN = "8411017661:AAHDO1JNiF6MVDQ5MlQlbY1hFBpVuggE_Ys"
+API_TOKEN = "8411017661:AAFYSg_0ATzf-sPmoj-it77t3pp_4RAyWUg"
 bot = telebot.TeleBot(API_TOKEN)
 
 # Headers taaki API server block na kare
