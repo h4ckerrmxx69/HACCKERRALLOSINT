@@ -14,7 +14,7 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
 }
 
-# --- ALL APIS (OSINT + FF) ---
+# --- ALL APIS ---
 APIS = {
     "📱 Phone Lookup": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
     "📍 Num Trace": "https://ab-calltraceapi.vercel.app/info?number={}",
@@ -39,29 +39,29 @@ APIS = {
     "🔍 Domain/Whois": "https://api.b77bf911.workers.dev/whois?domain={}"
 }
 
-# --- EXAMPLES FOR EVERY TOOL ---
+# --- EXAMPLES ---
 EXAMPLES = {
-    "📱 Phone Lookup": "Example: `91XXXXXXXXXX`",
+    "📱 Phone Lookup": "Example: `91XXXXXXXXXX` (Mobile No)",
     "📍 Num Trace": "Example: `92XXXXXXXXXX` (With Country Code)",
-    "🇵🇰 Pak Phone": "Example: `03XXXXXXXXX` (Pakistan Number)",
+    "🇵🇰 Pak Phone": "Example: `03XXXXXXXXX` (Pak Number)",
     "🆔 Aadhaar Lookup": "Example: `Full Name` (e.g., Rajesh Kumar)",
     "👥 Family Info": "Example: `91XXXXXXXXXX` (Target Number)",
-    "👤 Num Owner": "Example: `91XXXXXXXXXX` (Truecaller Search)",
-    "🚗 Vehicle Num": "Example: `DL10CE1234` (Vehicle Number)",
+    "👤 Num Owner": "Example: `91XXXXXXXXXX` (Truecaller)",
+    "🚗 Vehicle Num": "Example: `DL10CE1234` (RC Number)",
     "🌐 IP Lookup": "Example: `8.8.8.8` (IP Address)",
     "📧 Email Lookup": "Example: `test@gmail.com` (Email Address)",
-    "🎮 FF Player Info": "Example: `2919267964` (Numeric UID)",
-    "🚫 FF Ban Check": "Example: `2919267964` (Numeric UID)",
-    "📊 FF Level Check": "Example: `2919267964` (Numeric UID)",
-    "🌍 FF Region": "Example: `2919267964` (Numeric UID)",
-    "🎁 FF Wishlist": "Example: `2919267964` (Numeric UID)",
-    "🔍 FF Name Search": "Example: `yash` (Player Name)",
+    "🎮 FF Player Info": "Example: `2919267964` (Player UID)",
+    "🚫 FF Ban Check": "Example: `2919267964` (Player UID)",
+    "📊 FF Level Check": "Example: `2919267964` (Player UID)",
+    "🌍 FF Region": "Example: `2919267964` (Player UID)",
+    "🎁 FF Wishlist": "Example: `2919267964` (Player UID)",
+    "🔍 FF Name Search": "Example: `yash` (In-game Name)",
     "🎫 FF Token Decode": "Example: `eyJhbGci...` (JWT Token)",
-    "📅 FF Events": "Example: `europe` or `indonesia` (Region)",
+    "📅 FF Events": "Example: `europe` (Region Name)",
     "🏦 IFSC Lookup": "Example: `SBIN0001234` (IFSC Code)",
-    "💳 BIN Lookup": "Example: `457173` (First 6 Digits)",
-    "🐙 GitHub Profile": "Example: `torvalds` (Username)",
-    "🔍 Domain/Whois": "Example: `google.com` (Domain)"
+    "💳 BIN Lookup": "Example: `457173` (BIN Number)",
+    "🐙 GitHub Profile": "Example: `hackerrmx69` (Username)",
+    "🔍 Domain/Whois": "Example: `google.com` (Domain Name)"
 }
 
 user_state = {}
@@ -72,13 +72,13 @@ def send_welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     buttons = [types.KeyboardButton(name) for name in APIS.keys()]
     markup.add(*buttons)
-    bot.send_message(message.chat.id, "🚀 **Multi-Lookup Bot Ready!**\n\nService select karein aur command follow karein 👇", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(message.chat.id, "🚀 **OSINT & FF Bot Ready!**\nService select karein 👇", reply_markup=markup, parse_mode='Markdown')
 
 @bot.message_handler(func=lambda message: message.text in APIS.keys())
 def handle_menu_click(message):
     service = message.text
     user_state[message.chat.id] = service
-    guide = EXAMPLES.get(service, "Apni query yahan type karein:")
+    guide = EXAMPLES.get(service, "Apni query enter karein:")
     bot.send_message(message.chat.id, f"🛠 **Tool:** {service}\n📝 **Instruction:** {guide}", parse_mode='Markdown')
 
 @bot.message_handler(func=lambda message: message.chat.id in user_state)
@@ -92,7 +92,7 @@ def process_lookup(message):
         handle_menu_click(message)
         return
 
-    # Logging to Admin
+    # Admin Log
     try:
         log = f"📢 **User:** {user_info.first_name} (@{user_info.username})\n🛠 **Tool:** {selected_api}\n📝 **Query:** `{query_text}`"
         bot.send_message(ADMIN_ID, log, parse_mode='Markdown')
@@ -124,6 +124,11 @@ def process_lookup(message):
     except:
         bot.edit_message_text(f"❌ Error: API Timeout ya down hai!{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
 
+# --- RAILWAY CONFLICT FIX ---
 if __name__ == "__main__":
+    print("Railway Deployment: Fixing Conflicts...")
     bot.remove_webhook()
-    bot.infinity_polling()
+    time.sleep(1) # Chhota sa gap taaki purana session release ho jaye
+    print("Bot is Alive!")
+    bot.infinity_polling(timeout=20, long_polling_timeout=10)
+    
