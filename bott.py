@@ -7,15 +7,16 @@ from telebot import types
 
 # --- CONFIGURATION ---
 API_TOKEN = "8411017661:AAFYSg_0ATzf-sPmoj-it77t3pp_4RAyWUg"
-ADMIN_ID = 5192884021  # <--- Apni Numerical ID yahan daalein
+ADMIN_ID = 5192884021  # <--- Apni numerical ID yahan daal
 bot = telebot.TeleBot(API_TOKEN)
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
 }
 
-# --- ALL APIS ---
+# --- ALL APIS (OSINT + NEW FF SERVER) ---
 APIS = {
+    # --- OSINT LOOKUPS ---
     "📱 Phone Lookup": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
     "📍 Num Trace": "https://ab-calltraceapi.vercel.app/info?number={}",
     "🇵🇰 Pak Phone": "https://abbas-apis.vercel.app/api/pakistan?number={}",
@@ -25,43 +26,45 @@ APIS = {
     "🚗 Vehicle Num": "https://new-vehicle-api-eosin.vercel.app/vehicle?rc={}",
     "🌐 IP Lookup": "http://ip-api.com/json/{}",
     "📧 Email Lookup": "https://api.eva.pingutil.com/email?email={}",
-    "🎮 FF Player Info": "http://168.119.49.69:1132/player-info?uid={}",
-    "🚫 FF Ban Check": "http://168.119.49.69:1132/bancheck?uid={}",
-    "📊 FF Level Check": "http://168.119.49.69:1132/level?uid={}",
-    "🌍 FF Region": "http://168.119.49.69:1132/region?uid={}",
-    "🎁 FF Wishlist": "http://168.119.49.69:1132/wishlist?uid={}",
-    "🔍 FF Name Search": "http://168.119.49.69:1132/search?name={}",
-    "🎫 FF Token Decode": "http://168.119.49.69:1132/decode?token={}",
-    "📅 FF Events": "http://168.119.49.69:1132/events?region={}",
+    "🐙 GitHub Profile": "https://abbas-apis.vercel.app/api/github?username={}",
+    "🔍 Domain/Whois": "https://api.b77bf911.workers.dev/whois?domain={}",
     "🏦 IFSC Lookup": "https://api.b77bf911.workers.dev/ifsc?code={}",
     "💳 BIN Lookup": "https://lookup.binlist.net/{}",
-    "🐙 GitHub Profile": "https://abbas-apis.vercel.app/api/github?username={}",
-    "🔍 Domain/Whois": "https://api.b77bf911.workers.dev/whois?domain={}"
+
+    # --- NEW FREE FIRE APIS (Server: 203.57.85.58:2005) ---
+    "🎮 FF Player Info": "http://203.57.85.58:2005/player-info?uid={}",
+    "🚫 FF Ban Check": "http://203.57.85.58:2005/bancheck?uid={}",
+    "📊 FF Level Check": "http://203.57.85.58:2005/level?uid={}",
+    "🌍 FF Region": "http://203.57.85.58:2005/region?uid={}",
+    "🎁 FF Wishlist": "http://203.57.85.58:2005/wishlist?uid={}",
+    "🔍 FF Name Search": "http://203.57.85.58:2005/search?name={}",
+    "🎫 FF Token Decode": "http://203.57.85.58:2005/decode?token={}",
+    "📅 FF Events": "http://203.57.85.58:2005/events?region={}"
 }
 
-# --- EXAMPLES ---
+# --- EXAMPLES FOR ALL TOOLS ---
 EXAMPLES = {
-    "📱 Phone Lookup": "Example: `91XXXXXXXXXX` (Mobile No)",
-    "📍 Num Trace": "Example: `92XXXXXXXXXX` (With Country Code)",
-    "🇵🇰 Pak Phone": "Example: `03XXXXXXXXX` (Pak Number)",
-    "🆔 Aadhaar Lookup": "Example: `Full Name` (e.g., Rajesh Kumar)",
-    "👥 Family Info": "Example: `91XXXXXXXXXX` (Target Number)",
-    "👤 Num Owner": "Example: `91XXXXXXXXXX` (Truecaller)",
-    "🚗 Vehicle Num": "Example: `DL10CE1234` (RC Number)",
-    "🌐 IP Lookup": "Example: `8.8.8.8` (IP Address)",
-    "📧 Email Lookup": "Example: `test@gmail.com` (Email Address)",
-    "🎮 FF Player Info": "Example: `2919267964` (Player UID)",
-    "🚫 FF Ban Check": "Example: `2919267964` (Player UID)",
-    "📊 FF Level Check": "Example: `2919267964` (Player UID)",
-    "🌍 FF Region": "Example: `2919267964` (Player UID)",
-    "🎁 FF Wishlist": "Example: `2919267964` (Player UID)",
-    "🔍 FF Name Search": "Example: `yash` (In-game Name)",
-    "🎫 FF Token Decode": "Example: `eyJhbGci...` (JWT Token)",
-    "📅 FF Events": "Example: `europe` (Region Name)",
-    "🏦 IFSC Lookup": "Example: `SBIN0001234` (IFSC Code)",
-    "💳 BIN Lookup": "Example: `457173` (BIN Number)",
-    "🐙 GitHub Profile": "Example: `hackerrmx69` (Username)",
-    "🔍 Domain/Whois": "Example: `google.com` (Domain Name)"
+    "📱 Phone Lookup": "Format: `91XXXXXXXXXX` (India No)",
+    "📍 Num Trace": "Format: `92XXXXXXXXXX` (With CC)",
+    "🇵🇰 Pak Phone": "Format: `03XXXXXXXXX` (Pak No)",
+    "🆔 Aadhaar Lookup": "Format: `Rajesh Kumar` (Full Name)",
+    "👥 Family Info": "Format: `91XXXXXXXXXX` (Mobile No)",
+    "👤 Num Owner": "Format: `91XXXXXXXXXX` (Name/Owner)",
+    "🚗 Vehicle Num": "Format: `DL10CE1234` (RC No)",
+    "🌐 IP Lookup": "Format: `8.8.8.8` (IP Address)",
+    "📧 Email Lookup": "Format: `user@gmail.com` (Email)",
+    "🐙 GitHub Profile": "Format: `hacker` (Username)",
+    "🔍 Domain/Whois": "Format: `google.com` (Domain)",
+    "🏦 IFSC Lookup": "Format: `SBIN0001234` (IFSC)",
+    "💳 BIN Lookup": "Format: `457173` (First 6 Digits)",
+    "🎮 FF Player Info": "Format: `2919267964` (Numeric UID)",
+    "🚫 FF Ban Check": "Format: `2919267964` (Numeric UID)",
+    "📊 FF Level Check": "Format: `2919267964` (Numeric UID)",
+    "🌍 FF Region": "Format: `2919267964` (Numeric UID)",
+    "🎁 FF Wishlist": "Format: `2919267964` (Numeric UID)",
+    "🔍 FF Name Search": "Format: `yash` (In-game Name)",
+    "🎫 FF Token Decode": "Format: `eyJhbGci...` (JWT Token)",
+    "📅 FF Events": "Format: `indonesia` (Region Name)"
 }
 
 user_state = {}
@@ -72,14 +75,23 @@ def send_welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     buttons = [types.KeyboardButton(name) for name in APIS.keys()]
     markup.add(*buttons)
-    bot.send_message(message.chat.id, "🚀 **OSINT & FF Bot Ready!**\nService select karein 👇", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(
+        message.chat.id, 
+        "🔥 **Ultimate Multi-Lookup Bot Ready!**\n\nSaari APIs (OSINT + FF New Server) set hain.\nKoi bhi button select karein 👇", 
+        reply_markup=markup, 
+        parse_mode='Markdown'
+    )
 
 @bot.message_handler(func=lambda message: message.text in APIS.keys())
 def handle_menu_click(message):
     service = message.text
     user_state[message.chat.id] = service
-    guide = EXAMPLES.get(service, "Apni query enter karein:")
-    bot.send_message(message.chat.id, f"🛠 **Tool:** {service}\n📝 **Instruction:** {guide}", parse_mode='Markdown')
+    instruction = EXAMPLES.get(service, "Apni query niche bhejein:")
+    bot.send_message(
+        message.chat.id, 
+        f"🛠 **Selected:** {service}\n📝 **Instruction:** {instruction}", 
+        parse_mode='Markdown'
+    )
 
 @bot.message_handler(func=lambda message: message.chat.id in user_state)
 def process_lookup(message):
@@ -88,22 +100,22 @@ def process_lookup(message):
     selected_api = user_state[chat_id]
     query_text = message.text
     
-    if query_text in APIS:
+    if query_text in APIS: # Menu change safeguard
         handle_menu_click(message)
         return
 
-    # Admin Log
+    # Admin Logging
     try:
-        log = f"📢 **User:** {user_info.first_name} (@{user_info.username})\n🛠 **Tool:** {selected_api}\n📝 **Query:** `{query_text}`"
+        log = f"📢 **New Query**\n👤 **User:** {user_info.first_name} (@{user_info.username})\n🛠 **Tool:** {selected_api}\n📝 **Query:** `{query_text}`"
         bot.send_message(ADMIN_ID, log, parse_mode='Markdown')
     except: pass
 
-    wait_msg = bot.send_message(chat_id, "⏳ Data fetch ho raha hai...")
+    wait_msg = bot.send_message(chat_id, "⏳ Fetching Data from Server...")
     del user_state[chat_id]
 
     try:
         url = APIS[selected_api].format(query_text)
-        response = requests.get(url, headers=HEADERS, timeout=12)
+        response = requests.get(url, headers=HEADERS, timeout=15)
         
         try:
             raw_data = response.json()
@@ -119,16 +131,12 @@ def process_lookup(message):
             else:
                 bot.edit_message_text(f"✅ **Result:**\n```json\n{pretty_json}\n```\n{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
         except:
-            bot.edit_message_text(f"⚠️ **Response:** `{response.text[:1000]}`{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
+            bot.edit_message_text(f"⚠️ **Server Response:**\n`{response.text[:1000]}`{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
             
     except:
-        bot.edit_message_text(f"❌ Error: API Timeout ya down hai!{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
+        bot.edit_message_text(f"❌ Error: API Server down hai ya query galat hai!{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
 
-# --- RAILWAY CONFLICT FIX ---
 if __name__ == "__main__":
-    print("Railway Deployment: Fixing Conflicts...")
     bot.remove_webhook()
-    time.sleep(1) # Chhota sa gap taaki purana session release ho jaye
     print("Bot is Alive!")
-    bot.infinity_polling(timeout=20, long_polling_timeout=10)
-    
+    bot.infinity_polling()
