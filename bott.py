@@ -7,20 +7,30 @@ from telebot import types
 
 # --- CONFIGURATION ---
 API_TOKEN = "8411017661:AAFYSg_0ATzf-sPmoj-it77t3pp_4RAyWUg"
-ADMIN_ID = 5192884021  # <--- Apni numerical ID yahan daalein
+ADMIN_ID = 5192884021  # <--- Apni ID yahan daalo
 bot = telebot.TeleBot(API_TOKEN)
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
 }
 
-# --- ALL APIS (Merged & Updated) ---
+# --- ALL APIS (H4CKERR MX TOOLS ON TOP) ---
 APIS = {
-    # --- H4CKERR MX SPECIAL ---
+    # --- H4CKERR MX SPECIAL (PEHLE YE DIKHENGE) ---
     "🔍 GST Lookup": "https://paid.proportalxc.workers.dev/gst?gst={}",
     "📍 Pincode Search": "https://paid.proportalxc.workers.dev/pincode?pincode={}",
     "🌐 IP Detail": "https://paid.proportalxc.workers.dev/ip?ip={}",
     
+    # --- FREE FIRE NEW SERVER (203.57.85.58:2005) ---
+    "🎮 FF Player Info": "http://203.57.85.58:2005/player-info?uid={}",
+    "🚫 FF Ban Check": "http://203.57.85.58:2005/bancheck?uid={}",
+    "📊 FF Level Check": "http://203.57.85.58:2005/level?uid={}",
+    "🌍 FF Region": "http://203.57.85.58:2005/region?uid={}",
+    "🎁 FF Wishlist": "http://203.57.85.58:2005/wishlist?uid={}",
+    "🔍 FF Name Search": "http://203.57.85.58:2005/search?name={}",
+    "🎫 FF Token Decode": "http://203.57.85.58:2005/decode?token={}",
+    "📅 FF Events": "http://203.57.85.58:2005/events?region={}",
+
     # --- OSINT LOOKUPS ---
     "📱 Phone Lookup": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
     "📍 Num Trace": "https://ab-calltraceapi.vercel.app/info?number={}",
@@ -33,49 +43,19 @@ APIS = {
     "🐙 GitHub Profile": "https://abbas-apis.vercel.app/api/github?username={}",
     "🔍 Domain/Whois": "https://api.b77bf911.workers.dev/whois?domain={}",
     "🏦 IFSC Lookup": "https://api.b77bf911.workers.dev/ifsc?code={}",
-    "💳 BIN Lookup": "https://lookup.binlist.net/{}",
-    
-    # --- FREE FIRE APIS (Server: 203.57.85.58:2005) ---
-    "🎮 FF Player Info": "http://203.57.85.58:2005/player-info?uid={}",
-    "🚫 FF Ban Check": "http://203.57.85.58:2005/bancheck?uid={}",
-    "📊 FF Level Check": "http://203.57.85.58:2005/level?uid={}",
-    "🌍 FF Region": "http://203.57.85.58:2005/region?uid={}",
-    "🎁 FF Wishlist": "http://203.57.85.58:2005/wishlist?uid={}",
-    "🔍 FF Name Search": "http://203.57.85.58:2005/search?name={}",
-    "🎫 FF Token Decode": "http://203.57.85.58:2005/decode?token={}",
-    "📅 FF Events": "http://203.57.85.58:2005/events?region={}"
+    "💳 BIN Lookup": "https://lookup.binlist.net/{}"
 }
 
 # --- EXAMPLES FOR ALL ---
 EXAMPLES = {
-    # H4CKERR MX
-    "🔍 GST Lookup": "Example: `07AAAAA0000A1Z5` (Enter 15-digit GSTIN)",
-    "📍 Pincode Search": "Example: `110001` (Enter 6-digit Area Pincode)",
-    "🌐 IP Detail": "Example: `8.8.8.8` (Enter IPv4 Address)",
-    
-    # OSINT
-    "📱 Phone Lookup": "Example: `91XXXXXXXXXX` (Mobile with Country Code)",
-    "📍 Num Trace": "Example: `92XXXXXXXXXX` (International format)",
-    "🇵🇰 Pak Phone": "Example: `03XXXXXXXXX` (Pakistan Mobile Number)",
-    "🆔 Aadhaar Lookup": "Example: `Rajesh Kumar` (Enter Full Name)",
-    "👥 Family Info": "Example: `91XXXXXXXXXX` (Target Mobile Number)",
-    "👤 Num Owner": "Example: `91XXXXXXXXXX` (Search Name by Number)",
-    "🚗 Vehicle Num": "Example: `DL10CE1234` (Enter RC Number)",
-    "📧 Email Lookup": "Example: `user@gmail.com` (Enter Email Address)",
-    "🐙 GitHub Profile": "Example: `torvalds` (Enter GitHub Username)",
-    "🔍 Domain/Whois": "Example: `google.com` (Enter Domain Name)",
-    "🏦 IFSC Lookup": "Example: `SBIN0001234` (Enter Bank IFSC Code)",
-    "💳 BIN Lookup": "Example: `457173` (First 6 digits of Card)",
-    
-    # FREE FIRE
-    "🎮 FF Player Info": "Example: `2919267964` (Numeric Player UID)",
-    "🚫 FF Ban Check": "Example: `2919267964` (Numeric Player UID)",
-    "📊 FF Level Check": "Example: `2919267964` (Numeric Player UID)",
-    "🌍 FF Region": "Example: `2919267964` (Numeric Player UID)",
-    "🎁 FF Wishlist": "Example: `2919267964` (Numeric Player UID)",
-    "🔍 FF Name Search": "Example: `yash` (Player In-game Name)",
-    "🎫 FF Token Decode": "Example: `eyJhbGci...` (Paste the Full JWT Token)",
-    "📅 FF Events": "Example: `europe` or `indonesia` (Region Name)"
+    "🔍 GST Lookup": "Example: `07AAAAA0000A1Z5` (GSTIN Number)",
+    "📍 Pincode Search": "Example: `110001` (6 Digit Pincode)",
+    "🌐 IP Detail": "Example: `8.8.8.8` (IP Address)",
+    "🎮 FF Player Info": "Example: `2919267964` (Numeric UID)",
+    "📱 Phone Lookup": "Example: `91XXXXXXXXXX` (With Country Code)",
+    "🚗 Vehicle Num": "Example: `DL10CE1234` (RC No)",
+    "🆔 Aadhaar Lookup": "Example: `Rajesh Kumar` (Full Name)",
+    "🎫 FF Token Decode": "Example: `eyJhbGci...` (Paste Full Token)"
 }
 
 user_state = {}
@@ -83,12 +63,14 @@ DEV_TAG = "\n\n━━━━━━━━━━━━━━━\n👤 **Developer:-
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
+    # Buttons ko row_width=2 ya 3 karke properly set kiya hai
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     buttons = [types.KeyboardButton(name) for name in APIS.keys()]
     markup.add(*buttons)
+    
     bot.send_message(
         message.chat.id, 
-        "💀 **H4CKERR MX Multi-Lookup Bot Ready!**\n\nAb tak ki sabse advanced APIs set hain 👇", 
+        "💀 **H4CKERR MX Multi-Lookup V3.0**\n\nAb saare options upar hi mil jayenge. Tool select karo 👇", 
         reply_markup=markup, 
         parse_mode='Markdown'
     )
@@ -111,18 +93,17 @@ def process_lookup(message):
     selected_api = user_state[chat_id]
     query_text = message.text
     
-    # If user clicks another button instead of typing
     if query_text in APIS:
         handle_menu_click(message)
         return
 
-    # Admin Logging
+    # Admin Log
     try:
-        log = f"📢 **H4CKERR MX Log**\n👤 **User:** {user_info.first_name} (@{user_info.username})\n🛠 **Tool:** {selected_api}\n📝 **Query:** `{query_text}`"
+        log = f"📢 **H4CKERR MX Log**\n👤 **User:** {user_info.first_name}\n🛠 **Tool:** {selected_api}\n📝 **Query:** `{query_text}`"
         bot.send_message(ADMIN_ID, log, parse_mode='Markdown')
     except: pass
 
-    wait_msg = bot.send_message(chat_id, "⏳ Fetching Premium Data (H4CKERR MX Server)...")
+    wait_msg = bot.send_message(chat_id, "⏳ Fetching Data (H4CKERR MX Server)...")
     del user_state[chat_id]
 
     try:
@@ -146,9 +127,9 @@ def process_lookup(message):
             bot.edit_message_text(f"⚠️ **Response:** `{response.text[:1000]}`{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
             
     except:
-        bot.edit_message_text(f"❌ Error: API Down hai ya request block ho gayi!{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
+        bot.edit_message_text(f"❌ Error: Server connection failed!{DEV_TAG}", chat_id, wait_msg.message_id, parse_mode='Markdown')
 
 if __name__ == "__main__":
     bot.remove_webhook()
-    print("H4CKERR MX Bot is LIVE!")
+    print("H4CKERR MX V3 Started!")
     bot.infinity_polling()
