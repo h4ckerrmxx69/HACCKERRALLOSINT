@@ -7,7 +7,7 @@ from telebot import types
 
 # --- CONFIGURATION ---
 API_TOKEN = "8411017661:AAFYSg_0ATzf-sPmoj-it77t3pp_4RAyWUg"
-ADMIN_ID = 5192884021  # <--- Apni Numerical ID yahan daalein
+ADMIN_ID = 5192884021  # <--- Apni ID check kar lena
 bot = telebot.TeleBot(API_TOKEN)
 
 HEADERS = {
@@ -16,6 +16,9 @@ HEADERS = {
 
 # --- ALL APIS ---
 APIS = {
+    "📱 Phone Lookup": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
+    "👤 Num Owner": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
+    "🆔 Aadhaar Lookup": "https://aadhar.ek4nsh.in/?name={}",
     "📸 Insta Lookup": "https://allnew.proportalxc.workers.dev/instagram?username={}",
     "🔍 GST Lookup": "https://paid.proportalxc.workers.dev/gst?gst={}",
     "📍 Pincode Search": "https://paid.proportalxc.workers.dev/pincode?pincode={}",
@@ -25,57 +28,19 @@ APIS = {
     "🌾 Rashan Card": "https://api.b77bf911.workers.dev/rashan?aadhaar={}",
     "💸 UPI Lookup": "https://api.b77bf911.workers.dev/upi?user={}",
     "📡 Telegram Info": "https://api.b77bf911.workers.dev/telegram?user={}",
-    "🏦 IFSC Lookup": "https://api.b77bf911.workers.dev/ifsc?user={}",
     "🎮 FF Player Info": "http://203.57.85.58:2005/player-info?uid={}&key=@yashapis",
     "🚫 FF Ban Check": "http://203.57.85.58:2005/bancheck?uid={}&key=@yashapis",
     "📊 FF Level Check": "http://203.57.85.58:2005/level?uid={}&key=@yashapis",
-    "🌍 FF Region": "http://203.57.85.58:2005/region?uid={}&key=@yashapis",
-    "🎁 FF Wishlist": "http://203.57.85.58:2005/wishlist?uid={}&key=@yashapis",
-    "🔍 FF Name Search": "http://203.57.85.58:2005/search?name={}&key=@yashapis",
     "🎫 FF Token Decode": "http://203.57.85.58:2005/decode?token={}&key=@yashapis",
-    "📅 FF Events": "http://203.57.85.58:2005/events?region={}&key=@yashapis",
-    "📱 Phone Lookup": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
-    "📍 Num Trace": "https://ab-calltraceapi.vercel.app/info?number={}",
-    "🇵🇰 Pak Phone": "https://abbas-apis.vercel.app/api/pakistan?number={}",
-    "🆔 Aadhaar Lookup": "https://aadhar.ek4nsh.in/?name={}",
-    "👤 Num Owner": "https://information-web-by-rose.vercel.app/api/search?mode=mobile&query={}",
-    "🚗 Vehicle Num": "https://new-vehicle-api-eosin.vercel.app/vehicle?rc={}",
-    "📧 Email Lookup": "https://api.eva.pingutil.com/email?email={}",
-    "🐙 GitHub Profile": "https://abbas-apis.vercel.app/api/github?username={}",
-    "🔍 Domain/Whois": "https://api.hackertarget.com/whois/?q={}",
-    "💳 BIN Lookup": "https://lookup.binlist.net/{}"
+    "🔍 Domain/Whois": "https://api.hackertarget.com/whois/?q={}"
 }
 
-# --- ALL EXAMPLES (FULL LIST) ---
+# --- ALL EXAMPLES ---
 EXAMPLES = {
-    "📸 Insta Lookup": "Example: `physicswallah` (Username)",
-    "🔍 GST Lookup": "Example: `07AAAAA0000A1Z5` (GSTIN)",
-    "📍 Pincode Search": "Example: `110001` (6-Digit Code)",
-    "🌐 IP Detail": "Example: `8.8.8.8` (IP Address)",
-    "🚗 Vehicle V2": "Example: `DL10CE1234` (Vehicle No)",
-    "💳 PAN Lookup": "Example: `ABCDE1234F` (PAN Card)",
-    "🌾 Rashan Card": "Example: `123456789012` (Aadhaar No)",
-    "💸 UPI Lookup": "Example: `paytm@upi` (UPI ID)",
-    "📡 Telegram Info": "Example: `12345678` (User ID)",
-    "🏦 IFSC Lookup": "Example: `SBIN0001234` (IFSC Code)",
-    "🎮 FF Player Info": "Example: `2919267964` (Numeric UID)",
-    "🚫 FF Ban Check": "Example: `2919267964` (Numeric UID)",
-    "📊 FF Level Check": "Example: `2919267964` (Numeric UID)",
-    "🌍 FF Region": "Example: `2919267964` (Numeric UID)",
-    "🎁 FF Wishlist": "Example: `2919267964` (Numeric UID)",
-    "🔍 FF Name Search": "Example: `yash` (In-game Name)",
-    "🎫 FF Token Decode": "Example: `eyJhbGci...` (JWT Token)",
-    "📅 FF Events": "Example: `europe` or `indonesia` (Region)",
-    "📱 Phone Lookup": "Example: `91XXXXXXXXXX` (With CC)",
-    "📍 Num Trace": "Example: `91XXXXXXXXXX` (With CC)",
-    "🇵🇰 Pak Phone": "Example: `03XXXXXXXXX` (Pakistan No)",
+    "📱 Phone Lookup": "Example: `91XXXXXXXXXX` (With Country Code)",
     "🆔 Aadhaar Lookup": "Example: `Rajesh Kumar` (Full Name)",
-    "👤 Num Owner": "Example: `91XXXXXXXXXX` (Mobile No)",
-    "🚗 Vehicle Num": "Example: `DL10CE1234` (Vehicle No)",
-    "📧 Email Lookup": "Example: `test@gmail.com` (Email ID)",
-    "🐙 GitHub Profile": "Example: `torvalds` (Username)",
-    "🔍 Domain/Whois": "Example: `google.com` (Domain Name)",
-    "💳 BIN Lookup": "Example: `457173` (First 6 Digits)"
+    "🎮 FF Player Info": "Example: `2919267964` (UID)",
+    "📸 Insta Lookup": "Example: `physicswallah` (Username)"
 }
 
 user_state = {}
@@ -93,7 +58,7 @@ def send_welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     buttons = [types.KeyboardButton(name) for name in APIS.keys()]
     markup.add(*buttons)
-    bot.send_message(message.chat.id, "💀 **H4CKERR MX Ultimate V17.0**\nSaare examples aur logs update ho gaye hain! 👇", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(message.chat.id, "💀 **H4CKERR MX V18.0**\nSaare logs aur data check fixed! 👇", reply_markup=markup, parse_mode='Markdown')
 
 @bot.message_handler(func=lambda message: message.text in APIS.keys())
 def handle_menu_click(message):
@@ -112,7 +77,7 @@ def process_lookup(message):
         handle_menu_click(message)
         return
 
-    # --- UPDATED FULL ADMIN LOG ---
+    # --- FULL ADMIN LOG (Username + ID + Name) ---
     try:
         username = f"@{user.username}" if user.username else "None"
         log_text = (
@@ -126,7 +91,7 @@ def process_lookup(message):
         bot.send_message(ADMIN_ID, log_text, parse_mode='Markdown')
     except: pass
 
-    wait = bot.send_message(chat_id, "⏳ Fetching Data from Server...")
+    wait = bot.send_message(chat_id, "⏳ Searching in database...")
     del user_state[chat_id]
 
     try:
@@ -135,14 +100,21 @@ def process_lookup(message):
         
         try:
             data = res.json()
+            
+            # Agar results khali hain (Jo tera error tha)
+            if "results" in data and not data["results"] and data.get("count") == 0:
+                bot.edit_message_text(f"❌ **No Data Found!**\nServer ke database mein iss query ka koi record nahi mila.{DEV_TAG}", chat_id, wait.message_id, parse_mode='Markdown')
+                return
+
             pretty = json.dumps(data, indent=2, ensure_ascii=False)
             bot.delete_message(chat_id, wait.message_id)
             send_long_message(chat_id, f"✅ **Result ({selected_api}):**\n```json\n{pretty}\n```\n{DEV_TAG}")
         except:
             bot.edit_message_text(f"⚠️ **Server Response:**\n`{res.text[:1000]}`{DEV_TAG}", chat_id, wait.message_id, parse_mode='Markdown')
     except:
-        bot.edit_message_text(f"❌ Error: API Server down hai ya respond nahi kar raha!{DEV_TAG}", chat_id, wait.message_id, parse_mode='Markdown')
+        bot.edit_message_text(f"❌ Error: API Down hai ya respond nahi kar rahi!{DEV_TAG}", chat_id, wait.message_id, parse_mode='Markdown')
 
 if __name__ == "__main__":
     bot.remove_webhook()
     bot.infinity_polling()
+    
